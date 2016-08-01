@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'realm-android'
+android {
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
+
+    defaultConfig {
+        applicationId "com.example.ormtest"
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.ext.androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java-gen']
+        }
+    }
+}
+
+def dbflow_version = "3.1.1"
+dependencies {
+    Map<String, String> dependencies = rootProject.ext.dependencies;
+    compile dependencies.appCompat
+    compile dependencies.design
+    compile dependencies.cardView
+    compile dependencies.rxAndroid
+    compile dependencies.rxJavaProguard
+    compile dependencies.rxjava
+    compile 'org.greenrobot:greendao:3.0.1'
+    compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
+    compile files('libs/ormlite-android-4.48.jar')
+    compile files('libs/ormlite-core-4.48.jar')
+    apt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
+    // use kapt for kotlin apt
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
+}

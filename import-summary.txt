@@ -1,0 +1,47 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* hs_err_pid2144.log
+* hs_err_pid3820.log
+* hs_err_pid4616.log
+* hs_err_pid5752.log
+* ic_launcher-web.png
+* proguard-project.txt
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets
+* libs\activeandroid-3.1-beta.jar => app\libs\activeandroid-3.1-beta.jar
+* libs\android-support-v4.jar => app\libs\android-support-v4.jar
+* libs\greendao-1.3.7.jar => app\libs\greendao-1.3.7.jar
+* libs\greendao-generator-1.3.0.jar => app\libs\greendao-generator-1.3.0.jar
+* libs\ormlite-android-4.48.jar => app\libs\ormlite-android-4.48.jar
+* libs\ormlite-core-4.48.jar => app\libs\ormlite-core-4.48.jar
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+* src-gen\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
