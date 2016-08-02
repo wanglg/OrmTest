@@ -88,16 +88,6 @@ public class MainActivity extends OrmLiteBaseActivity<OrmHelper> implements
         if (v.getId() == R.id.btn) {
             final StringBuilder builder = new StringBuilder();
             Observable.concat(Observable.from(getDeleteAndInsertObservable()))
-      /*      Observable.concat(RxObservable.getDeleteContentProviderObservable(MainActivity.this)
-                    , RxObservable.getInsertContentProviderObservable(INSERT_COUNT, MainActivity.this)
-                    , RxObservable.getDeleteOrmLiteOb(MainActivity.this)
-                    , RxObservable.getInsertOrmLiteOb(MainActivity.this, INSERT_COUNT)
-                    , RxObservable.getDeleteGreenDaoOb(studentDao)
-                    , RxObservable.getInsertGreenDaoOb(INSERT_COUNT, studentDao)
-                    , RxObservable.getDeleteActiveandroidOb()
-                    , RxObservable.getInsertActiveandroidOb(INSERT_COUNT)
-                    , RxObservable.getDeleteDbFlowOb()
-            )*/
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(new Subscriber<String>() {
@@ -133,10 +123,6 @@ public class MainActivity extends OrmLiteBaseActivity<OrmHelper> implements
         } else {
             final StringBuilder builder = new StringBuilder();
             Observable.concat(Observable.from(getQueryObservable()))
-          /*  Observable.concat(RxObservable.getQueryContentProviderObservable(MainActivity.this)
-                    , RxObservable.getQueryOrmliteObservable(MainActivity.this)
-                    , RxObservable.getQueryGreenDaoObservable(studentDao)
-                    , RxObservable.getQueryActiveandroidOb())*/
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(new Subscriber<String>() {
