@@ -13,9 +13,6 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 /**
- * @author Zhu Yan
- *
- * Created	on	2014-3-19  ����10:08:36
  */
 @DatabaseTable(tableName = "users")
 public class User {
